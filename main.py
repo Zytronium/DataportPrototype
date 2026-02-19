@@ -1,6 +1,8 @@
 # This is a prototype of the future game, DATAPORT, a web-based text game where you must escape a digital world
 from time import sleep
 
+NOT_A_PROGRAM = ["im_not_a_program.exe", "im_no_program.exe", "not_a_program.exe", "imnotaprogram.exe", "notaprogram.exe", "imnoprogram.exe"]
+
 
 def main():
     clear_screen()
@@ -22,8 +24,9 @@ def main():
     typeln("Tell me, what's your name, program?")
     sleep(0.25)
     print()
-    name = input("> ").replace(" ", "_") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
+    name = input("> ").strip().replace(" ", "_") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
     print()
+    name = validate_name(name)
     typeln(f"Hello, {name}! Welcome to THE DATAPORT!")
     sleep(1)
     print("*T H U N K*")
@@ -41,6 +44,17 @@ def main():
     # to be continued...
 
 
+def validate_name(name):
+    while name == ".exe":
+        print("Oh don't be shy, tell us your name!")
+        name = input("> ").replace(" ", "_") + ".exe"
+        return validate_name(name)
+    while name.replace("'", "").lower() in NOT_A_PROGRAM:
+        print("You may sure think that, but you are a program now. What's your name?")
+        name = input("> ").replace(" ", "_") + ".exe"
+        return validate_name(name)
+    if name != ".exe" and name.replace("'", "").lower() not in NOT_A_PROGRAM:
+        return name
 
 def typewrite(text):
     for char in text:
