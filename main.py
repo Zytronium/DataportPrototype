@@ -1,0 +1,67 @@
+# This is a prototype of the future game, DATAPORT, a web-based text game where you must escape a digital world
+from time import sleep
+
+
+def main():
+    typeln("INITIALIZING DATA PORT...")
+    sleep(1)
+    typeln("DECRYPTING RECEIVED INSTRUCTIONS...")
+    sleep(1)
+    typeln("ENGAGING TRANSDIMENSIONAL BEAM...")
+    sleep(2)
+    # here I'd like to do a flash effect and then a fade to black with a
+    # terminal screen flickering in a moment later, but that's too
+    # complicated for text-only.
+    clear_screen()
+
+    typeln("Hello World!")
+    sleep(0.5)
+    typeln("Oh, a new visitor!")
+    typeln("We don't get many travelers through the dataport. At least, not anymore.")
+    typeln("Tell me, what's your name, program?")
+    sleep(0.25)
+    print()
+    name = input("> ") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
+    print()
+    typeln(f"Hello, {name}! Welcome to DATAPORT!")
+    sleep(1)
+    print("*THUNK*")
+    sleep(0.5)
+    typeln("(The whole place quakes for a moment)")
+    sleep(0.5)
+    typeln("... What was that?")
+    sleep(1)
+    typeln("Our storage medium has just been unplugged.")
+
+    # to be continued...
+
+
+
+def typewrite(text):
+    for char in text:
+        print(char, end="", flush=True)
+        match char:
+            case " ": delay = 0.15
+            case ".": delay = 0.075
+            case ",": delay = 0.067
+            case "!": delay = 0.15
+            case ";": delay = 0.067
+            case ":": delay = 0.1
+            case "'": delay = 0.025
+            case _: delay = 0.05
+        sleep(delay)
+
+
+def typeln(text):
+    typewrite(text)
+    print()
+
+
+def clear_screen():
+    print("\033[H\033[J", end="")
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    main()
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
