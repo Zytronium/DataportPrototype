@@ -3,6 +3,7 @@ from time import sleep
 
 
 def main():
+    clear_screen()
     typeln("INITIALIZING DATA PORT...")
     sleep(1)
     typeln("DECRYPTING RECEIVED INSTRUCTIONS...")
@@ -23,15 +24,18 @@ def main():
     print()
     name = input("> ") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
     print()
-    typeln(f"Hello, {name}! Welcome to DATAPORT!")
+    typeln(f"Hello, {name}! Welcome to THE DATAPORT!")
     sleep(1)
     print("*THUNK*")
     sleep(0.5)
     typeln("(The whole place quakes for a moment)")
-    sleep(0.5)
-    typeln("... What was that?")
+    sleep(2.5)
+    typeln("... What was that, you ask?")
     sleep(1)
     typeln("Our storage medium has just been unplugged.")
+    sleep(0.5)
+    typeln("Feel free to look around the place.")
+    typeln("Get used to this new existance.")
 
     # to be continued...
 
@@ -41,13 +45,13 @@ def typewrite(text):
     for char in text:
         print(char, end="", flush=True)
         match char:
-            case " ": delay = 0.15
-            case ".": delay = 0.075
-            case ",": delay = 0.067
-            case "!": delay = 0.15
-            case ";": delay = 0.067
-            case ":": delay = 0.1
-            case "'": delay = 0.025
+            case " ": delay = 0.075
+            case ".": delay = 0.1
+            case ",": delay = 0.08
+            case "!": delay = 0.1
+            case ";": delay = 0.08
+            case ":": delay = 0.125
+            case "'": delay = 0.033
             case _: delay = 0.05
         sleep(delay)
 
