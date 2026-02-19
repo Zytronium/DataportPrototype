@@ -26,7 +26,7 @@ def main():
     print()
     typeln(f"Hello, {name}! Welcome to THE DATAPORT!")
     sleep(1)
-    print("*THUNK*")
+    print("*T H U N K*")
     sleep(0.5)
     typeln("(The whole place quakes for a moment)")
     sleep(2.5)
