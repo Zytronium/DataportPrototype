@@ -22,7 +22,7 @@ def main():
     typeln("Tell me, what's your name, program?")
     sleep(0.25)
     print()
-    name = input("> ") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
+    name = input("> ").replace(" ", "_") + ".exe" # in the web game, we'd append ".exe" visually too when they hit enter
     print()
     typeln(f"Hello, {name}! Welcome to THE DATAPORT!")
     sleep(1)
@@ -34,8 +34,9 @@ def main():
     sleep(1)
     typeln("Our storage medium has just been unplugged.")
     sleep(0.5)
+    typeln("Oh, don't feel trapped! There's much to see in our small little world.")
     typeln("Feel free to look around the place.")
-    typeln("Get used to this new existance.")
+    typeln("Get used to this new existence.")
 
     # to be continued...
 
